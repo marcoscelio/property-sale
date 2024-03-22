@@ -41,6 +41,7 @@ jobs:
         env:
           VITE_REDUX_SECRET_KEY: ${{ vars.VITE_REDUX_SECRET_KEY }}
           VITE_API_URL: ${{ vars.VITE_API_URL }}
+          NODE_ENV: ${{ vars.NODE_ENV }}
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4

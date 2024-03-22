@@ -16,6 +16,19 @@ export default defineConfig({
         rewrite: (path) =>
           path.replace(/^\/api/, "cdn.number8.com/LA/listings.json"),
       },
+
+      "/property-sale/api": {
+        target: "https://s3.us-west-2.amazonaws.com",
+        changeOrigin: true,
+        secure: false,
+        // ws: true,
+        // rewrite: (path) => path.replace(/^\/api/, ""),
+        rewrite: (path) =>
+          path.replace(
+            /^\/property-sale\/api/,
+            "cdn.number8.com/LA/listings.json"
+          ),
+      },
     },
   },
 });
